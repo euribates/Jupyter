@@ -25,12 +25,78 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-                    <h1>Introducción a Jupyter</h1>
+                    <h2>Introducción a Jupyter</h2>
                     <h4>(Antes conocido como <i>iPython Notebook</i>)</h4>
                 </section>
                 
                 <section>
-                    ¿Para qué sirve?
+                    <h2>¿Qué es iPython?</h2>
+                    <h4 class="fragment">Un interprete de Python 
+                            <font size="+10%">a<font size="+10%">m<font
+                                        size="+10%">p<font
+                                            size="+10%">liado</font></font></font></font></h3>
+                        <ul>
+                            <li class="fragment">Comandos "mágicos"</li>
+                            <li class="fragment">coloreado de sintaxis</li>
+                            <li class="fragment">Autocompletado de código</li>
+                            <li class="fragment">Introspección</li>
+                            <li class="fragment">Mejores ayudas, documentación</li>
+                            <li class="fragment">debugging, etc...</i></li>
+                </section>
+
+                <section>
+                    <img src="./img/ipython.png">
+                </section>
+
+                <section>
+                    <h2>iPython es Python con superpoderes</h2>
+                    <div id="superpoderes"> 
+                      <div class="front"> 
+                        <img src="./img/clark-kent.png" border="0">
+                      </div>
+                      <div class="back">
+                        <img class="fragment" src="./img/superman.png" border="0">
+                      </div>
+                    </div>  
+                </section>
+
+                <section>
+                    <h2>¿Cómo lo hace?</h2>
+                    <code>
+                        iPython espera una orden<br>
+                        Si la orden es especial:<br>
+                       
+                            la procesa el<br>
+                        
+                        si no:<br>
+
+                            Se la pasa al interprete de
+                            python, espera el resultado y 
+                            nos lo muestra
+                     </code>
+                </section>
+
+                <section>
+                     <h2>¿Qué es un notebook?</h2>
+
+                     <div class="wall">Una aplicación web, que permite ejecutar
+                         código a la vez que representar texto con formato,
+                         imágenes, diagramas y ecuaciones matemáticas como un
+                         todo
+                     </div>
+                </section>
+                        
+                <section>
+                    <h1>¿Para qué sirve?</h1>
+                    
+                    <ul>
+                        <li>Realización de análisis y estudios
+                        repetibles, verificables y modificables</li>
+                    </ul>
+
+
+                    *************** POR AQUI **************
+
                 </section>
 
 				<section>
@@ -63,12 +129,28 @@
                         </aside>
                 </section>
 
+                <section>
+                    <h2>Un notebook se divide en celdas</h2>
+                </section>
+
+                <section>
+                    <h2>Hay varios tipos de celdas</h2>
+                
+                    Celda de texto
+                    Celda de código
+                    Celda de resultados
+
+                </section>
+
+
 
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery.flip.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -83,6 +165,9 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+jQuery('#superpoderes').flip({ speed: 1500 });
+
 		</script>
 	</body>
 </html>
