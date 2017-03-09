@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Introducción a Jupyter (Antes iPython notebook)</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -25,7 +25,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-                    <h2>Introducción a Jupyter</h2>
+                    <h2>Introducción a</h2>
+                    <h1>Jupyter</h1>
                     <h4>(Antes conocido como <i>iPython Notebook</i>)</h4>
                 </section>
                 
@@ -42,6 +43,7 @@
                             <li class="fragment">Introspección</li>
                             <li class="fragment">Mejores ayudas, documentación</li>
                             <li class="fragment">debugging, etc...</i></li>
+                        </ul>
                 </section>
 
                 <section>
@@ -55,44 +57,46 @@
                         <img src="./img/clark-kent.png" border="0">
                       </div>
                       <div class="back">
-                        <img class="fragment" src="./img/superman.png" border="0">
+                        <img src="./img/superman.png" border="0">
                       </div>
                     </div>  
                 </section>
 
                 <section>
                     <h2>¿Cómo lo hace?</h2>
-                    <code>
-                        iPython espera una orden<br>
-                        Si la orden es especial:<br>
-                       
-                            la procesa el<br>
-                        
-                        si no:<br>
-
-                            Se la pasa al interprete de
-                            python, espera el resultado y 
-                            nos lo muestra
-                     </code>
+                    <pre><code class="hlpython"  data-trim contenteditable>
+while True:
+    orden = espera_orden()
+    if orden.es_especial:
+        procesa_orden_interna(orden)
+    else:
+        salida = ejecuta_en_python(orden)
+        print(salida)
+                    </code></pre>
                 </section>
 
                 <section>
                      <h2>¿Qué es un notebook?</h2>
 
-                     <div class="wall">Una aplicación web, que permite ejecutar
-                         código a la vez que representar texto con formato,
-                         imágenes, diagramas y ecuaciones matemáticas como un
-                         todo
+                     <div class="wall">Una <b>aplicación web</b><span class="fragment">, que permite <b>ejecutar
+                                 código</b> <span class="fragment"a la vez que representar texto con formato,
+                                <span class="fragment">incluyendo 
+                                    <b>imágenes, diagramas y ecuaciones matemáticas</b> <span class="fragment">de
+                                    forma integrada</span></span></span></span>
                      </div>
                 </section>
                         
                 <section>
-                    <h1>¿Para qué sirve?</h1>
+                    <h2>¿Para qué sirve?</h2>
                     
                     <ul>
-                        <li>Realización de análisis y estudios
-                        repetibles, verificables y modificables</li>
+                        <li>Consola Python avanazada
+                        <li>Realización de análisis y estudios</li>
+                        <li>Informes en vivo</li>
+                        <li>Panel de mando</li>
                     </ul>
+                    <p>Son <b>fáciles de compartir</b>, <b>repetibles</b>, 
+                    <b>verificables</b> y <b>modificables</b></p>
 
 
                     *************** POR AQUI **************
@@ -103,30 +107,29 @@
                     <h3>Jupyter ≊ Julia + Python + R</h3>
                     <div class="well">   
                        <a href="http://julialang.org/">
-                           <img border="0" src="./img/julia_logo.svg" height="120">
-                            </a> + 
+                           <img border="0" src="./img/julia_logo.svg" height="30%" width="30%" border="0">
+                            </a>
                         <a href="http://www.python.org/">
-                            <img border="0" src="./img/python_logo.svg" height="120">
-                            </a> + 
+                            <img border="0" src="./img/python_logo.svg" height="30%" width="30%" border="0">
+                            </a>
                         <a href="http://www.r-project.org/">
-                            <img border="0" src="./img/R_logo.svg" height="120"></a>
+                            <img border="0" src="./img/R_logo.svg" height="30%"  border="0"></a>
                     </div>
                 </section>
                 <section>
-                    <h2>Y muchos más...</h2>
+                    <h2>Y más...</h2>
                         <ul>
                             <li><a href="">Ruby</a></li>
-                            <li class="fragment"><a href="https://www.haskell.org/">Haskell</a></li>
-                            <li class="fragment">Javascript</li>
-                            <li class="fragment">Go</li>
-                            <li class="fragment">Scala</li>
-                            <li class="fragment">Octave</li>
-                            <li class="fragment">Bash</li>
-                            <li class="fragment">PowerShell</li>
+                            <li class="fragment"><a href="https://github.com/gibiansky/IHaskell">Haskell</a></li>
+                            <li class="fragment"><a href="https://github.com/notablemind/jupyter-nodejs">Node.js</a></li>
+                            <li class="fragment"><a href="https://github.com/IRkernel/IRkernel">R</a></li>
+                            <li class="fragment">Muchos más: Go, 
+                            Scala, Octave, Bash, PowerShell</li>
+                        <li>Lista completa 
+                    en <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">https://github.com/jupyter/jupyter/wiki/Jupyter-kernels</a></li>
                         </ul>
-                        <aside><p>Ver lista completa 
-                    en <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">https://github.com/jupyter/jupyter/wiki/Jupyter-kernels</a>, unos 85 a fecha de feb/2017</p>
-                        </aside>
+                    <p>Keyword: <code>Jupyter</code> <code>kernel</code> for <code>[Tu lenguaje favorito aquí</code></p>
+                        
                 </section>
 
                 <section>
@@ -142,6 +145,38 @@
 
                 </section>
 
+            <section>
+                <h3>Connvertir a otros formatos</h3>
+            </section>
+
+            <section>
+                <h2>Cosas que no da tiempo de ver</h2>
+
+                <section>
+                    <h3>Ejecución en paralelo sobre varios núcleos</h3>
+                    <p>Podemos tener varios notebooks
+                    ejecutándose sobre un único kernel.</p>
+                    <p>También podemos tener un notebook controlando
+                    varios kernels, para paralelizar
+                    trabajos sobre un cluster de máquinas</p>
+                    <p>Keywords: <code>ipyparallel</code></p>
+                </section>
+
+                <section>
+                    <h3> Usar kernels de otros lenguajes </h3>
+                </section>
+
+                <section>
+                    <h3> Cómo escribir nuestro propio kernel </h3>
+                </section>
+
+                <section>
+                    <h3> Cómo escribir nuestras propias extensiones </h3>
+                </section>
+
+
+
+            </section>
 
 
 			</div>
@@ -166,7 +201,13 @@
 				]
 			});
 
-jQuery('#superpoderes').flip({ speed: 1500 });
+jQuery(document).ready( function () {
+    jQuery('#superpoderes').flip({ 
+    speed: 500,
+    axis: 'x',
+    reverse: true
+    });
+  });
 
 		</script>
 	</body>
