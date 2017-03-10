@@ -31,33 +31,70 @@
                     <h1>Jupyter</h1>
                     <h4>(Antes conocido como <i>iPython Notebook</i>)</h4>
                 </section>
-                
+               
                 <section>
-                    <h2>Evolución histórica</h2>
+                    <h3>Sobre la instalación</h3>
                     <ul>
-                        <li class="frament">iPython</li>
-                        <li class="frament">iPython notebook</li>
-                        <li class="frament">Jupyter notebook (Language
-                        agnostic)</li>
+                        <li>Normalmente, se usa Jupyter junto a 
+                        varias librerías: Numpy, Pandas, Scipy, Matplotlib, etc...
+                        <ul>
+                            <li><b class="fragment highlight-green">Si ya usas
+                            Python</b>, puedes usar pip para instalar Jupyter. El
+                        resto de librerías puede ser más
+                        complicado</li>
+                            <li><b class="fragment highlight-green">Si eres
+                            nuevo</b>, te recomiendo usar Anaconda: Instala
+                        Jupyter y un montón de librerías ya compiladas, super sencillo
+                        y válido para Mac/Windows/Linux</li>
                     </ul>
+                    </ul>
+                    <p>keywords:
+                        <code class="keyword">Install</code>
+                        <code class="keyword">Anaconda</code>
+                        </p>
                 </section>
 
-				<section>
-                    <h3>Jupyter ≊ Julia + Python + R</h3>
-                    <div class="well">   
-                       <a href="http://julialang.org/">
-                           <img border="0" src="./img/julia_logo.svg" height="30%" width="30%" border="0">
+                <section>
+
+                    <section>
+                        <h2>Evolución histórica</h2>
+                        <ul>
+                            <li class="frament">iPython</li>
+                            <li class="frament">iPython notebook</li>
+                            <li class="frament">Jupyter notebook (<i>Language agnostic</i>)</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Jupyter se desvincula de iPython</h3>
+                        <ul>
+                            <li class="fragment">Se define claramente la
+                            interfaz entre el notebook y el nucleo</li>
+                            <li class="fragment">Ahora podemos reemplazar el
+                            nucleo de iPython por otro, siempre que cumpla
+                            la misma interfaz</li>
+                            <li class="fragment">iPython sigue siendo el kernel
+                            por defecto, pero pueden añadirse otros</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Jupyter ≊ Julia + Python + R</h3>
+                        <div class="well">   
+                        <a href="http://julialang.org/">
+                           <img border="0" src="./img/julia_logo.svg"
+                           valign="middle" height="200" border="0">
                             </a>
                         <a href="http://www.python.org/">
-                            <img border="0" src="./img/python_logo.svg" height="30%" width="30%" border="0">
+                            <img border="0" src="./img/python_logo.svg"
+                            valign="middle" height="200" border="0">
                             </a>
                         <a href="http://www.r-project.org/">
-                            <img border="0" src="./img/R_logo.svg" height="30%" width="30%" border="0"></a>
-                    </div>
-                </section>
-                
-                <section>
-                    <h2>Y más...</h2>
+                            <img border="0" src="./img/R_logo.svg"
+                            valign="middle" height="200" border="0"></a>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Y más...</h2>
                         <ul>
                             <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
                             <li class="fragment"><a href="https://www.haskell.org/">Haskell</a></li>
@@ -71,13 +108,13 @@
                             <li class="fragment">Lista completa 
                     en <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">https://github.com/jupyter/jupyter/wiki/Jupyter-kernels</a></li>
                         </ul>
-                    <p class="fragment">Keywords: <code
-                        class="keyword">Jupyter</code> <code
-                    class="keyword">kernel</code> for <code class="keyword">[Tu
-                lenguaje favorito aquí]</code></p>
-                        
+                    <p class="fragment">Keywords: 
+                        <code class="keyword">Jupyter</code> 
+                        <code class="keyword">kernel</code> 
+                        <code class="keyword">[Tu lenguaje favorito aquí]</code>
+                        </p>
+                    </section>
                 </section>
-
 
                 <section>
 
@@ -111,11 +148,6 @@
                     </section>
 
                     <section>
-                        <h3>Ejemplo de las capacidades de iPython</h3>
-                        <img src="./img/ipython.png">
-                    </section>
-
-                    <section>
                         <h3>¿Cómo lo hace?</h3>
                         <pre><code class="hlpython"  data-trim contenteditable>
 while True:
@@ -128,6 +160,11 @@ while True:
                     </code></pre>
                     </section>
             
+                    <section>
+                        <h3>Ejemplo de las capacidades de iPython ⚙</h3>
+                        <img src="./img/ipython.png">
+                    </section>
+
                     <section>
                         <h2>Comandos mágicos</h2>
                         <ul>
@@ -143,7 +180,7 @@ while True:
                         </ul>
                     </section>
                     <section>
-                        <h3>(Algunos) Comandos mágicos</h3>
+                        <h3>(Algunos) Comandos mágicos ⚙</h3>
                         <ul>
                             <li><code class="keyword">%who</code> y <code
                                 class="keyword">%whos</code> muestran variables definidas en
@@ -160,20 +197,29 @@ while True:
                         <code class="keyword">commands</code>
                         </p>
                     </section>
-
+                    <section>
+                        <h3>Ayudas y Completado de sintaxis ⚙</h3>
+                        <ul>
+                            <li>Pulsando <code class="keyboard">TAB</code></li>
+                            <li>Ojo, realiza introspección de lo que tenga en
+                            memoria.</li>
+                            <li>Lo que no está cargado, lo desconoce</li>
+                            <li>Podemos pedir ayuda de cualquier comando,
+                            mágico o de python, con <code
+                                class="keyword">?</code>, antes o despues</li>
+                        </ul>
+                    </section>
                 </section>
-
 
                 <section>
 
                     <section>
                      <h2>¿Qué es un notebook?</h2>
                     </section>
-
                     <section>
                     <h3>Una definición</h3>
-
-                     <p class="wall">Una <b class="fragment highlight-green">aplicación web</b>, que
+                    <h4>Como cualquier otra</h4>
+                     <div>Una <b class="fragment highlight-green">aplicación web</b>, que
                          permite <b class="fragment highlight-green">ejecutar
                                  código</b> a la vez que representar <b
                                  class="fragment highlight-green">texto con
@@ -201,10 +247,11 @@ while True:
                     <section>
                         <h2>Características de los notebooks</h2>
                         <ul>
-                        <li class="fragment highlight-green">fáciles de compartir</li>
-                        <li class="fragment highlight-green">repetibles</li>
-                        <li class="fragment highlight-green">verificables</li>
-                        <li class="fragment highlight-green">modificables</li>
+                        <li class="fragment highlight-green">Fáciles de compartir</li>
+                        <li class="fragment highlight-green">Autocontenidos</li>
+                        <li class="fragment highlight-green">Repetibles</li>
+                        <li class="fragment highlight-green">Verificables</li>
+                        <li class="fragment highlight-green">Modificables</li>
                         </ul>
                     </section>
 
