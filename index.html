@@ -7,6 +7,7 @@
 		<title>Introducción a Jupyter (Antes iPython notebook)</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/custom.css">
 		<link rel="stylesheet" href="css/theme/league.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -24,6 +25,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<section>
                     <h2>Introducción a</h2>
                     <h1>Jupyter</h1>
@@ -31,73 +33,13 @@
                 </section>
                 
                 <section>
-                    <h2>¿Qué es iPython?</h2>
-                    <h4 class="fragment">Un interprete de Python 
-                            <font size="+10%">a<font size="+10%">m<font
-                                        size="+10%">p<font
-                                            size="+10%">liado</font></font></font></font></h3>
-                        <ul>
-                            <li class="fragment">Comandos "mágicos"</li>
-                            <li class="fragment">coloreado de sintaxis</li>
-                            <li class="fragment">Autocompletado de código</li>
-                            <li class="fragment">Introspección</li>
-                            <li class="fragment">Mejores ayudas, documentación</li>
-                            <li class="fragment">debugging, etc...</i></li>
-                        </ul>
-                </section>
-
-                <section>
-                    <img src="./img/ipython.png">
-                </section>
-
-                <section>
-                    <h2>iPython es Python con superpoderes</h2>
-                    <div id="superpoderes"> 
-                      <div class="front"> 
-                        <img src="./img/clark-kent.png" border="0">
-                      </div>
-                      <div class="back">
-                        <img src="./img/superman.png" border="0">
-                      </div>
-                    </div>  
-                </section>
-
-                <section>
-                    <h2>¿Cómo lo hace?</h2>
-                    <pre><code class="hlpython"  data-trim contenteditable>
-while True:
-    orden = espera_orden()
-    if orden.es_especial:
-        procesa_orden_interna(orden)
-    else:
-        salida = ejecuta_en_python(orden)
-        print(salida)
-                    </code></pre>
-                </section>
-
-                <section>
-                     <h2>¿Qué es un notebook?</h2>
-
-                     <div class="wall">Una <b>aplicación web</b><span class="fragment">, que permite <b>ejecutar
-                                 código</b> <span class="fragment"a la vez que representar texto con formato,
-                                <span class="fragment">incluyendo 
-                                    <b>imágenes, diagramas y ecuaciones matemáticas</b> <span class="fragment">de
-                                    forma integrada</span></span></span></span>
-                     </div>
-                </section>
-                        
-                <section>
-                    <h2>¿Para qué sirve?</h2>
-                    
+                    <h2>Evolución histórica</h2>
                     <ul>
-                        <li>Consola Python en web
-                        <li>Realización de análisis y estudios</li>
-                        <li>Informes en vivo</li>
-                        <li>Panel de mando</li>
+                        <li class="frament">iPython</li>
+                        <li class="frament">iPython notebook</li>
+                        <li class="frament">Jupyter notebook (Language
+                        agnostic)</li>
                     </ul>
-                    <p>Son <b>fáciles de compartir</b>, <b>repetibles</b>, 
-                    <b>verificables</b> y <b>modificables</b></p>
-
                 </section>
 
 				<section>
@@ -110,70 +52,242 @@ while True:
                             <img border="0" src="./img/python_logo.svg" height="30%" width="30%" border="0">
                             </a>
                         <a href="http://www.r-project.org/">
-                            <img border="0" src="./img/R_logo.svg" height="30%"  border="0"></a>
+                            <img border="0" src="./img/R_logo.svg" height="30%" width="30%" border="0"></a>
                     </div>
                 </section>
+                
                 <section>
                     <h2>Y más...</h2>
                         <ul>
-                            <li><a href="">Ruby</a></li>
-                            <li class="fragment"><a href="https://github.com/gibiansky/IHaskell">Haskell</a></li>
-                            <li class="fragment"><a href="https://github.com/notablemind/jupyter-nodejs">Node.js</a></li>
-                            <li class="fragment"><a href="https://github.com/IRkernel/IRkernel">R</a></li>
-                            <li class="fragment">Muchos más: Go, 
-                            Scala, Octave, Bash, PowerShell</li>
-                        <li>Lista completa 
+                            <li><a href="https://www.ruby-lang.org/es/">Ruby</a></li>
+                            <li class="fragment"><a href="https://www.haskell.org/">Haskell</a></li>
+                            <li class="fragment"><a href="https://nodejs.org/en/">Node.js</a></li>
+                            <li class="fragment">... muchos más: <a href="https://golang.org/">Go</a>, 
+                            <a href="https://www.scala-lang.org/">Scala</a>,
+                            <a href="https://www.gnu.org/software/octave/">Octave</a>, 
+                            <a
+                            href="https://www.gnu.org/software/bash/">Bash</a>,
+                        <a href="https://www.rust-lang.org/es-ES/">Rust</a> ...</li>
+                            <li class="fragment">Lista completa 
                     en <a href="https://github.com/jupyter/jupyter/wiki/Jupyter-kernels">https://github.com/jupyter/jupyter/wiki/Jupyter-kernels</a></li>
                         </ul>
-                    <p>Keyword: <code>Jupyter</code> <code>kernel</code> for <code>[Tu lenguaje favorito aquí</code></p>
+                    <p class="fragment">Keywords: <code
+                        class="keyword">Jupyter</code> <code
+                    class="keyword">kernel</code> for <code class="keyword">[Tu
+                lenguaje favorito aquí]</code></p>
                         
                 </section>
 
-                <section>
-                    <h2>Un notebook se divide en celdas</h2>
-                </section>
 
                 <section>
-                    <h2>Hay varios tipos de celdas</h2>
+
+                    <section>
+                        <h2>¿Qué es iPython?</h2>
+                    </section>
+
+                    <section>
+                    <h3>iPython es Python con superpoderes</h3>
+                        <div id="superpoderes"> 
+                            <div class="front"> 
+                            <img src="./img/clark-kent.png" border="0">
+                            </div>
+                            <div class="back">
+                            <img src="./img/superman.png" border="0">
+                            </div>
+                        </div>  
+                    </section>
+
+                    <section>
+                    <h3>Un interprete de Python <big size="120%">ampliado</big></h3>
+                     <p>Puede hacer todo lo que un interprete normal, y más cosas:</p>
+                        <ul>
+                            <li class="fragment">Comandos "mágicos"</li>
+                            <li class="fragment">Coloreado de sintaxis</li>
+                            <li class="fragment">Autocompletado de código</li>
+                            <li class="fragment">Introspección</li>
+                            <li class="fragment">Mejores ayudas, documentación</li>
+                            <li class="fragment">debugging, etc...</i></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Ejemplo de las capacidades de iPython</h3>
+                        <img src="./img/ipython.png">
+                    </section>
+
+                    <section>
+                        <h3>¿Cómo lo hace?</h3>
+                        <pre><code class="hlpython"  data-trim contenteditable>
+while True:
+    orden = espera_orden()
+    if orden.es_especial:
+        procesa_orden_interna(orden)
+    else:
+        salida = ejecuta_en_python(orden)
+        print(salida)
+                    </code></pre>
+                    </section>
+            
+                    <section>
+                        <h2>Comandos mágicos</h2>
+                        <ul>
+                            <li>Son ordenes propias de iPython
+                            <li>Siempre empiezan por <code>%</code> o
+                            <code>%%</code>
+                                <ul>
+                                    <li>% para ordenes que afecta una sola
+                                    línea</li>
+                                    <li>%% para ordenes que afectan a toda una celda</li>
+                                </ul>
+                                </li>
+                            <li><code>%lsmagic</code> es una orden mágica que
+                            lista todas las ordenes mágicas disponibles</li>
+                        </ul>
+                    </section>
+
+                </section>
+
+
+                <section>
+
+                    <section>
+                     <h2>¿Qué es un notebook?</h2>
+                    </section>
+
+                    <section>
+                    <h3>Una definición</h3>
+
+                     <p class="wall">Una <b class="fragment highlight-green">aplicación web</b>, que
+                         permite <b class="fragment highlight-green">ejecutar
+                                 código</b> a la vez que representar <b
+                                 class="fragment highlight-green">texto con
+                                 formato</b>,
+                                incluyendo 
+                                    <b class="fragment
+                                        highlight-green">imágenes,
+                                        diagramas</b> y 
+                                    <b class="fragment highlight-green">ecuaciones matemáticas</b> de
+                                    forma integrada</span>
+                     </p>
+                     </section>
+                        
+                     <section>
+                        <h2>¿Para qué sirve?</h2>
+                    
+                        <ul>    
+                        <li class="fragment highlight-green">Consola Python en web
+                        <li class="fragment highlight-green">Realización de análisis y estudios</li>
+                        <li class="fragment highlight-green">Informes en vivo</li>
+                        <li class="fragment highlight-green">Panel de mando</li>
+                        </ul>
+                    </section>
+        
+                    <section>
+                        <h2>Características de los notebooks</h2>
+                        <ul>
+                        <li class="fragment highlight-green">fáciles de compartir</li>
+                        <li class="fragment highlight-green">repetibles</li>
+                        <li class="fragment highlight-green">verificables</li>
+                        <li class="fragment highlight-green">modificables</li>
+                        </ul>
+                    </section>
+
+                </section>
+            
+                <section>
+
+                    <section> 
+                        <h2>Un notebook se divide en celdas</h2>
+                        <h3>notebook = Lista de celdas + metadatos</h3>
+                    </section>
+
+                    <section>
+                        <h4>Hay varios tipos de celdas</h4>
+                        <ul>
+                            <li>Celda de texto</li>
+                            <li>Celda de código</li>
+                            <li>Celda de resultados</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Celda de texto</h4>
+                        <ul>
+                            <li>Aceptan <b>markdown</b>,
+                                y <b>Html</b>, con lo que podemos darle formato a los
+                        textos muy facilmente</li>
+                        <li>Podemos incluir fórmulas matemáticas 
+                        usando el formato de
+                        <a href="https://es.wikipedia.org/wiki/LaTeX">LaTex</a></<li>
+                        </ul>
+                        <p>Keywords: <code class="keyword">Latex</code>
+                            <code class="keyword">Markdown</code>
+                            <code class="keyword">Jupyter</code>
+                        
+                    </section>
+
+                    <section>
+                        <h4>Ejemplo de celda de texto</h4>
+                    </section>
+
+                    <section>
+                        <h4>Celda de código</h3>
+                        <p>Descripcion de la celda de código</p>
+                    </section>
+                    
+                    <section>
+                        <h3>Ejemplo de celda de código</h3>
+
+                    </section>
+
+                    <section>
+                        <h3>Celda de resultados</h3>
+                    </section>
+                    
+                    <section>
+                        <h3>Ejemplos de celda de resultados</h3>
+                    </section>
+
+                </section>
+
+            <section>
+                 <section>
+                     <h3>Compartir y convertir a otros formatos</h3>
+                 </section>
+                 <section>
+                     <h3>El formato ipynb es el formato estandar para compartir</h3>
+                     <p>Es json sencillo. Su estructura es metadatos más lista de celdas.</p>
+                 </section>
+                 <section>
+                     <h3>Convertir a PDF vía Latex</h3>
+                 </section>
+                 <section>
+                     <h3>Convertir a Restructured Text</h3>
+                 </section>
+                <section>
+                    <h3>Convertir a Python / Markdown</h3>
+                </section>
+            </section>
                 
-                    Celda de texto
-                    Celda de código
-                    Celda de resultados
-
-                </section>
-
             <section>
-                <h3>Connvertir a otros formatos</h3>
+                <section>
+                    <h2>Cosas que no tenemos tiempo de ver</h2>
+                    <h3>Pero que resultan interesantes</h3>
+                </section>
+                <section>
+                    <h2>Uso de otros kernels (lenguajes)</h2>
+                </section>
+                <section>
+                    <h2>Procesamiento en paralelo</h2>
+                </section>
+                <section>
+                    <h2>Escribir nuestros propios kernels</h2>
+                </section>
+                <section>
+                    <h2>Seguridad</h2>
+                </section>
             </section>
 
-            <section>
-                <h2>Cosas que no da tiempo de ver</h2>
-
-                <section>
-                    <h3>Ejecución en paralelo sobre varios núcleos</h3>
-                    <p>Podemos tener varios notebooks
-                    ejecutándose sobre un único kernel.</p>
-                    <p>También podemos tener un notebook controlando
-                    varios kernels, para paralelizar
-                    trabajos sobre un cluster de máquinas</p>
-                    <p>Keywords: <code>ipyparallel</code></p>
-                </section>
-
-                <section>
-                    <h3> Usar kernels de otros lenguajes </h3>
-                </section>
-
-                <section>
-                    <h3> Cómo escribir nuestro propio kernel </h3>
-                </section>
-
-                <section>
-                    <h3> Cómo escribir nuestras propias extensiones </h3>
-                </section>
-
-
-
-            </section>
 
 
 			</div>
