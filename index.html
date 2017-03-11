@@ -29,7 +29,9 @@
 				<section>
                     <h2>Introducción a</h2>
                     <h1>Jupyter</h1>
-                    <h4>(Antes conocido como <i>iPython Notebook</i>)</h4>
+                    <h3>(Antes conocido como <i>iPython Notebook</i>)</h3>
+                    <h4>Por Juan Ignacio Rodríguez de León (@jileon en twitter,
+                    @euribates en Telegram)</h4>
                 </section>
                
                 <section>
@@ -63,6 +65,12 @@
                             <li class="frament">iPython notebook</li>
                             <li class="frament">Jupyter notebook (<i>Language agnostic</i>)</li>
                         </ul>
+                    </section>
+                    <section>
+                        <h3>Arquitectura de iJupyter</h3>
+                        <h4>Muuuy simplificada</h4>
+                        <img src="./img/communication.svg" with="300"
+                        height="300">
                     </section>
                     <section>
                         <h3>Jupyter se desvincula de iPython</h3>
@@ -120,6 +128,7 @@
 
                     <section>
                         <h2>¿Qué es iPython?</h2>
+                        <img src="./img/ministry-of-walk.png">
                     </section>
 
                     <section>
@@ -162,6 +171,8 @@ while True:
             
                     <section>
                         <h3>Ejemplo de las capacidades de iPython ⚙</h3>
+                        <p>Desde la consola, escribimos:
+                        <code>ipython</code></p>
                         <img src="./img/ipython.png">
                     </section>
 
@@ -215,6 +226,7 @@ while True:
 
                     <section>
                      <h2>¿Qué es un notebook?</h2>
+                     <img src="./img/notebook.png">
                     </section>
                     <section>
                     <h3>Una definición</h3>
@@ -237,10 +249,11 @@ while True:
                         <h2>¿Para qué sirve?</h2>
                     
                         <ul>    
-                        <li class="fragment highlight-green">Consola Python en web
-                        <li class="fragment highlight-green">Realización de análisis y estudios</li>
-                        <li class="fragment highlight-green">Informes en vivo</li>
-                        <li class="fragment highlight-green">Panel de mando</li>
+                        <li>Consola Python en web
+                        <li>Realización de análisis y estudios</li>
+                        <li>Informes en vivo</li>
+                        <li>Panel de mando</li>
+                        <li>Publicaciones interactivas</li>
                         </ul>
                     </section>
         
@@ -255,9 +268,44 @@ while True:
                         </ul>
                     </section>
 
-                </section>
+                    <section>
+                        <h3>Arranquemos Jupyter ⚙</h3>
+
+                        <p>Desde la consola, ejecutar <code>jupyter
+                        notebook</code></p>
+
+                        <img src="./img/dashboard.png">
+                    </section>
+                    <section>
+                        <h3>Crear un nuevo Notebook ⚙</h3>
+
+                        <p>A la Derecha, elegimos <code>New</code> →
+                                <code>Python 3</code></p>
+                        <img src="./img/new-notebook.png">
+                    </section>
+                    <section>
+                        <h3>Algunos ejercicios ⚙</h3>
+                        <ul>
+                            <li class="fragment">Cambiar el título del notebook</li>
+                            <li class="fragment">Ver que el cambio del nombre se refleja en el
+                            <i>dashboard</i></li>
+                            <li class="fragment">Añadir un fichero al directorio desde el que
+                            arrancamos Jupyter, por ejemplo, en línea de
+                            comando: <code>touch
+                                notas.md</code></li>
+                            <li class="fragment">Ver que el <i>dashboard</i> refleja
+                            el cambio, sin necesidad de refrescar</li>
+                        </ul>
+                    </section>
+
+            </section>
             
                 <section>
+
+                    <section>
+                        <h3>Anatomia de un Notebook</h3>
+                        <img src="./img/anatomy-of-a-notebook.png">
+                    </section>
 
                     <section> 
                         <h2>Un notebook se divide en celdas</h2>
@@ -285,52 +333,71 @@ while True:
                         </ul>
                         <p>Keywords: <code class="keyword">Latex</code>
                             <code class="keyword">Markdown</code>
+                            <code class="keyword">MathJax</code>
                             <code class="keyword">Jupyter</code>
                         
                     </section>
 
                     <section>
-                        <h4>Ejemplo de celda de texto</h4>
+                        <h4>Ejemplo de celda de texto ⚙</h4>
+                        <ul>
+                            <li class="fragment">Insertar texto en Markdown:
+                            negritas, itálicas, una lista...</li>
+                            <li class="fragment">Insertar texto en Html:
+                            un párrafo, una imagen...</li>
+                            <li class="fragment">Insertar una formula
+                            matemática</li>
+                        </ul>
                     </section>
 
                     <section>
-                        <h4>Celda de código</h3>
-                        <p>Descripcion de la celda de código</p>
+                        <h4>Celda de código ⚙</h3>
+                        <ul>
+                            <li class="fragment">Imprimir los
+                            pares hasta el 20</li>
+                            <li class="fragment">Cargar y
+                            mostrar una imagen</li>
+                            <li class="fragment">Crear un
+                            <i>thumbnail</i> 
+                            de la imagen anterior y mostrarlo</li>
+                            <li class="fragment">Recortar una
+                            parte de la imagen y mostrarla</li>
+                        </ul>
+                        <p>Keywords:
+                            <code class="keyword">Pillow</code>
+                            <code class="keyword">Python</code>
+                            <code class="keyword">Image</code>
+                            <code class="keyword">Library</code>
+                            </p>
+
                     </section>
                     
-                    <section>
-                        <h3>Ejemplo de celda de código</h3>
-
-                    </section>
 
                     <section>
                         <h3>Celda de resultados</h3>
+                        <ul>
+                            <li class="fragment">Lo que hemos visto en los resultados
+                            anterior</li>
+                            <li class="fragment">Jupyter reconoce tipos de datos diferentes
+                            y los puede representar</li>
+                            <li class="fragment">Incluir HTML es superpotente</li>
+                        <ul>
                     </section>
-                    
+
                     <section>
-                        <h3>Ejemplos de celda de resultados</h3>
+                        <h3>Incuir un video de Youtube ⚙</h3>
+
+                        <ul>
+                            <li class="fragment">Usa el comando mágico <code>%%HTML</code></li>
+                            <li class="fragment">Busca en compartir vídeo en YouTube, luego
+                            <i>embeb</i></li>
+                            <li class="fragment">Guardianes de la galaxia Vol 2 va a ser <b>la
+                                caña</b></li>
+                        </ul>
                     </section>
 
                 </section>
 
-            <section>
-                 <section>
-                     <h3>Compartir y convertir a otros formatos</h3>
-                 </section>
-                 <section>
-                     <h3>El formato ipynb es el formato estandar para compartir</h3>
-                     <p>Es json sencillo. Su estructura es metadatos más lista de celdas.</p>
-                 </section>
-                 <section>
-                     <h3>Convertir a PDF vía Latex</h3>
-                 </section>
-                 <section>
-                     <h3>Convertir a Restructured Text</h3>
-                 </section>
-                <section>
-                    <h3>Convertir a Python / Markdown</h3>
-                </section>
-            </section>
                 
             <section>
                 <section>
@@ -338,20 +405,79 @@ while True:
                     <h3>Pero que resultan interesantes</h3>
                 </section>
                 <section>
+                    <h3>Todas las fantásticas librerías científicas
+                        y matemáticas: numpy, pandas, matplotlib, scipy...</h3>
+                    <p>... pero no te pierdas el siguiente taller, te
+                    gustará</p>
+                </section>
+                 <section>
+                     <h3>Compartir y convertir a otros formatos</h3>
+                     <ul>
+                         <li>El formato ipynb es el formato estandar para
+                         compartir. Es JSON sencillo. Su estructura es metadatos más 
+                         lista de celdas. Puedes enviarlo por correo, hacer
+                         control de versiones, ponerlo en la web...</li>
+                 
+                     <li>Convertir a Html estático</li>
+                     <li>Convertir a PDF vía Latex</li>
+                     <li>Convertir a Restructured Text</li>
+                     <li>Convertir a Python / Markdown</li>
+                     <p>Keywords:
+                        <code class="keyword">nbconvert</code>
+                        </p>
+                </section>
+                <section>
                     <h2>Uso de otros kernels (lenguajes)</h2>
+                    <p>Hay para elegir</p>
                 </section>
                 <section>
                     <h2>Procesamiento en paralelo</h2>
+                    <p>Podemos controlar ejecución en parelelo
+                    desde un notebook sobre multiples maquindas. Muy
+                    interesante para todo lo que sea BigData</p>
+                    <p>Keywords:
+                        <code class="keyword">pyparellel</code>
+                        </p>
                 </section>
                 <section>
                     <h2>Escribir nuestros propios kernels</h2>
+                    <h3>Hay dos opciones</h3>
+                    <ul>
+                        <li>Implementar el protocolo de comunicaciones
+                        con <b>ZeroMQ</b> desde el lenguaje que queremos añadir</li>
+                            <ul>
+                                <li>Más complicado, pero es tu lenguaje
+                                favorito. Tu comunidad puede apoyarte.</li>
+                            </ul>
+                        <li>Usar un wrapper en python</li> 
+                            <ul>
+                                <li>Las interfaces de
+                        comunicaciones ya están creadas, por lo que es más
+                        simple.Pero puede que tu lenguaje no se deje <i>wrappear</i> facilmente</li>
+                            </ul>
+                        </ul>
+                </section>
+                <section>
+                    <h3>Compartir notebooks</h3>
+                    <p>Existe soluciones para compartir el misno
+                    notebooks entre diferentes personas, cada uno 
+                    ejecuta su propia version, mientras que el original
+                    se mantiene intacto</p>
+                    <p>Keywords:
+                        <code class="keyword">JupyterHub</code>
+                        </p>
+
                 </section>
                 <section>
                     <h2>Seguridad</h2>
+                    <p>No hemos visto nada, pero existe</p>
                 </section>
             </section>
 
-
+            <section>
+                <h1>¡Gracias a todos por asistir!</h1>
+                <h2>¿Preguntas?</h2>
+            </section>
 
 			</div>
 		</div>
