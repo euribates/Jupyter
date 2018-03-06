@@ -47,7 +47,7 @@ def select_next_word(choices):
 if __name__ == "__main__":
     
     counter = Counter()
-    counter.update(get_words('prologo.md'))
+    counter.update(get_words('data/prologo.md'))
 
     prev_word = None
     kernel = defaultdict(lambda: defaultdict(int))

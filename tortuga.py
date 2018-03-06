@@ -69,11 +69,9 @@ class Turtle(object):
             self.pos, self.head = self.stack.pop()
 
     def get_angle(self):
-        print('get_angle called')
         return self._angle
 
     def set_angle(self, angle):
-        print('set_angle called')
         self._angle = angle
         sin_theta = round(math.sin(angle), 10)
         cos_theta = round(math.cos(angle), 10)
