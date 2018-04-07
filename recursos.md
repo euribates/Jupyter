@@ -29,6 +29,9 @@
 - The "Python Machine Learning" book code repository and info resource 
     <https://github.com/rasbt/python-machine-learning-book>
 
+- Python for Data Analysis
+    <https://github.com/cuttlefishh/python-for-data-analysis>
+
 ## Librerias de terceros (numpy, PAndas, Scipy, etc...)
 
 - Scikit-learn Tutorial
@@ -51,7 +54,10 @@
     <http://nbviewer.jupyter.org/url/jakevdp.github.com/downloads/notebooks/XKCD_plots.ipynb>
 
 - 28 Jupyter Notebook tips, tricks and shortcuts
-    https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+    <https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/>
+
+- Awesome Jupyter
+    <https://github.com/markusschanta/awesome-jupyter>
 
 ## Varios
 
