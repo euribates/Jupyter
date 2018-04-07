@@ -32,7 +32,7 @@
 - Python for Data Analysis
     <https://github.com/cuttlefishh/python-for-data-analysis>
 
-## Librerias de terceros (numpy, PAndas, Scipy, etc...)
+## Librerías de terceros (numpy, Pandas, Scipy, etc...)
 
 - Scikit-learn Tutorial
     <https://github.com/jakevdp/sklearn_tutorial>
@@ -45,7 +45,7 @@
 
 - Pythonic Data Cleaning With NumPy and Pandas <https://realpython.com/python-data-cleaning-numpy-pandas/>
 
-## Magic Commands y customización de Jupyer
+## Magic Commands y customización de Jupyter
 
 - Built-in magic commands
     <http://ipython.readthedocs.io/en/stable/interactive/magics.html>
