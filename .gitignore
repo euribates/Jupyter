@@ -1,5 +1,6 @@
 .idea/
 *.iml
+*.pyc
 *.iws
 *.eml
 out/
@@ -9,5 +10,6 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+.cache
 css/reveal.min.css
 js/reveal.min.js
