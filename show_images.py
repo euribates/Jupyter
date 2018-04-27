@@ -22,7 +22,5 @@ def find_images(p='.'):
     return result
 
 
-
-
-
 pygame.init()
+pygame

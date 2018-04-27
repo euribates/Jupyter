@@ -70,4 +70,5 @@
 - A gallery of interesting Jupyter and IPython Notebooks
     <https://github.com/jupyter/jupyter/wiki/A-gallery-of-interesting-Jupyter-and-IPython-Notebooks>
 
-
+- Presenting Code Using Jupyter Notebook Slides
+    <https://medium.com/@mjspeck/presenting-code-using-jupyter-notebook-slides-a8a3c3b59d67>
