@@ -37,6 +37,8 @@
 - Scikit-learn Tutorial
     <https://github.com/jakevdp/sklearn_tutorial>
 
+- 10 Minutes to Pandas <http://pandas.pydata.org/pandas-docs/version/0.15/10min.html>
+
 - 101 NumPy Exercises for Data Analysis <https://www.machinelearningplus.com/python/101-numpy-exercises-python/>
 
 - 5 Quick and Easy Data Visualizations in Python with Code <https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f>
