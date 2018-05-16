@@ -32,6 +32,10 @@ class Vector2(object):
     def mod(self):
         return sqrt(self.x**2 + self.y**2)
 
+    def unit(self):
+        m = self.mod
+        return Vector2(self.x / m, self.y / m)
+
     def as_tuple(self): 
         return (int(round(self.x)), int(round(self.y)))
 
@@ -49,7 +53,10 @@ class Vector2(object):
 
     def __mul__(self, op2):
         return Vector2(self.x * op2, self.y * op2)
-    
+
+    def __div__(self, op2):
+        return Vector2(self.x / op2, self.y / op2)
+
     def __matmul__(self, op2):
         return self.x * op2.x + self.y * op2.y
 
@@ -92,18 +99,6 @@ class Vector2(object):
         angle = random.uniform(0, 2 * pi)
         return Vector2(cos(angle), sin(angle))
 
-
-def draw_vector(screen, color, a, b):
-    pygame.draw.circle(screen, color, a, 3, 0)
-    pygame.draw.line(screen, color, a, b, 1)
-    left = b - a
-    left.mod = 10
-    left.theta -= 7. * pi / 8.0
-    pygame.draw.line(screen, color, b, b+left, 1)
-    right = b-a
-    right.mod = 10
-    right.theta += 7. * pi / 8.0
-    pygame.draw.polygon(screen, color, [b, b+left, b+right, b], 0)
 
 up = Vector2(0, -1)
 down = Vector2(0, 1)
