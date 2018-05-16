@@ -61,6 +61,12 @@ def test_random():
         assert 0 <= v.x < 800
         assert 0 <= v.y < 600
 
+def test_random():
+    for _ in range(50):
+        v = Vector2.random(800, 600)
+        assert 0 <= v.x < 800
+        assert 0 <= v.y < 600
+
 
 def test_theta_zero_degrees():
     v = Vector2(1, 0)

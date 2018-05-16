@@ -42,7 +42,7 @@ class Vector2(object):
         return Vector2(self.y, -self.x)
 
     def __add__(self, op2):
-        return Vector2(self.x + op2.x, self.y + op2.y)
+        return Vector2(self.x + op2[0], self.y + op2[1])
 
     def __sub__(self, op2):
         return Vector2(self.x - op2.x, self.y - op2.y)
