@@ -30,7 +30,7 @@ class Vector2(object):
 
     @property
     def mod(self):
-        return sqrt(self.x**2 + self.y**2)
+        return round(sqrt(self.x**2 + self.y**2), 9)
 
     def unit(self):
         m = self.mod
