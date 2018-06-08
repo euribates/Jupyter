@@ -9,17 +9,21 @@ from math import sin, cos, atan2, sqrt, pi
 
 class Vector2(object):
 
-    def __init__(self, x, y):
-        self.x = float(x)
-        self.y = float(y)
-
+    def __init__(self, x, y=None):
+        if y is None:  # Created using a tuple or list
+            self.x = float(x[0])
+            self.y = float(x[1])
+        else:
+            self.x = float(x)
+            self.y = float(y)
+    
     def __str__(self):
         return 'Vector2({}, {})'.format(self.x, self.y)
 
     __repr__ = __str__
 
     def _get_theta(self):
-        return atan2(self.y, self.x)
+            return atan2(self.y, self.x)
 
     def _set_theta(self, v):
         m = self.mod
@@ -94,16 +98,26 @@ class Vector2(object):
             random.randrange(0, max_x),
             random.randrange(0, max_y),
             )
+    
+    @staticmethod
+    def Up(): return Vector2(0, -1)
 
+    @staticmethod
+    def Down(): return Vector2(0, 1)
+
+    @staticmethod
+    def Left(): return Vector2(-1, 0)
+
+    @staticmethod
+    def Right(): return Vector2(1, 0)
+
+    @staticmethod
+    def Zero(): return Vector2(0, 0)
+
+    @staticmethod
     def random_unit():
         angle = random.uniform(0, 2 * pi)
         return Vector2(cos(angle), sin(angle))
 
 
-up = Vector2(0, -1)
-down = Vector2(0, 1)
-left = Vector2(-1, 0)
-right = Vector2(1, 0)
-
-zero = Vector2(0, 0)
 

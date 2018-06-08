@@ -6,11 +6,46 @@ import pytest
 from vectores import Vector2
 
 
-def test_creacion():
+def test_create_from_x_and_y():
     v = Vector2(3, 4)
     assert v.x == 3
     assert v.y == 4
 
+def test_create_from_tuple():
+    t = (3, 7)
+    v = Vector2(t)
+    assert v.x == 3
+    assert v.y == 7
+
+def test_create_from_other_vector():
+    v1 = Vector2(3, 5)
+    v2 = Vector2(v1)
+    assert v2.x == 3
+    assert v2.y == 5
+    
+def test_create_unitary_axis_vectors_left():
+    left = Vector2.Left()
+    assert left.x == -1
+    assert left.y == 0
+
+    
+def test_create_unitary_axis_vectors_right():
+    left = Vector2.Right()
+    assert left.x == 1
+    assert left.y == 0
+
+    
+def test_create_unitary_axis_vectors_up():
+    left = Vector2.Up()
+    assert left.x == 0
+    assert left.y == -1
+
+    
+def test_create_unitary_axis_vectors_down():
+    left = Vector2.Down()
+    assert left.x == 0
+    assert left.y == 1
+    
 
 def test_modulo():
     v = Vector2(3, 4)
