@@ -1,0 +1,14 @@
+code.keyword {
+    border: 1px solid green;
+    color: #336699;
+    background-color: #F0F000;
+    padding: 2px;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px
+}
+
+div.well {
+    border: 2px solid green;
+    background: #F0F0F0;
+}
