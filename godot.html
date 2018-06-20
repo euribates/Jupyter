@@ -132,6 +132,265 @@ func _process(delta):
                 </section>
 
                 <section>
+                    <h3>Nuestra nave para asteroids</h3>
+
+                    <img src="img/godot/nave.png">
+                </section>
+
+                <section>
+                    <h3>Vamos a crear una "escena" para la nave</h3>
+                    <ul>
+                        <li class="fragment">Es una escena, pero también 
+                            un <i>asset</i></li>
+                        <li class="fragment">Es decir, que podemos usarlo en otra
+                            escena como si fuera un componente más, solo
+                            que más complejo</li>
+                        <li class="fragment">
+                            <a href="https://godotengine.org/asset-library/asset">Godot
+                            Assets</a></li>
+                    </ul>
+                </section>
+
+                <section data-markdown>
+                    ### Componentes de la nave
+                    
+                    - El nodo raiz va a ser un [Node2D][Node2D]
+                    - A ese nodo añadimos:
+                      - Un [Sprite][Sprite]
+                      - Un [Area2d][Area2d]
+                        - Al Area2D, añadimos un [CollisionPolygon2D]
+
+
+                    [Node2D]: http://docs.godotengine.org/en/3.0/classes/class_node2d.html
+                    [Sprite]: http://docs.godotengine.org/en/3.0/classes/class_sprite.html
+                    [Area2D]: http://docs.godotengine.org/en/3.0/classes/class_area2d.html
+                    [CollisionPolygon2D]: http://docs.godotengine.org/en/3.0/classes/class_collisionpolygon2d.html
+                </section>
+                
+                <section>
+                    <img src="img/godot/ship-tree.png">
+                </section>
+
+                <section data-markdown>
+                    ### El nodo raiz Node2D
+
+                    El <b>Node2D</b> es un nodo muy sencillo.
+                    Pero tiene características que nos interesan:
+
+                     - Puede ser parte de un árbol
+                     - Tiene coordenadas x e y
+                     - Puede dibujar en pantalla (si hace falta)
+                     - Es habitual usarlo como nodo padre de una escena
+                
+                </section>
+
+                <section data-markdown>
+                    ### Cambiamos el nombre del nodo
+
+                    - Vamos a llamar al nodo raíz <b>Ship</b>
+                    - Comprobar que esta centrado (posición 0,0)
+                      y sin modificaciones de escala, rotación, etc...
+
+                </section>
+
+                <section data-markdown>
+                    ### Añdimos el Sprite de la imagen
+
+                    - Añadimos un nodo sprite como hijo de Ship
+                    - Asignamos la textura de la nave al sprite
+                    - Ajustamos las propiedades en Animatión para decirle
+                      que es un _spritesheet_ de 2x1
+
+                </section>
+
+                <section data-markdown>
+                    ### Los Nodos Sprite
+
+                    - Sirven para presentar imágenes en el juego
+                    - Tienes coordenadas x e y (Relativas
+                      a la posición del padre)
+                    - Lo mismo con la escala y la orientación
+                </section>
+
+                <section data-markdown>
+                    ### Añadimos un nodo de tipo Area2d
+
+                    - Los nodos [Area2D] sirven para trabajar con
+                      areas, poder detectar áreas que se
+                      solapan, etc.
+
+                    - Necesitan tener un nodo hijo de tipo Collision, que
+                     puede ser Un [CollisionShape2D] o un [CollisionPolygon2D]
+
+                      [Area2D]: http://docs.godotengine.org/en/3.0/classes/class_area2d.html
+                      [CollisionShape2D]: http://docs.godotengine.org/en/3.0/classes/class_collisionshape2d.html
+                      [CollisionPolygon2D]: http://docs.godotengine.org/en/3.0/classes/class_collisionpolygon2d.html
+
+                </section>
+
+                <section data-markdown>
+                    ### Los nodos CollisionShape2D
+
+                    - Permiten, mediante el atributo <b>shape</b>, definir
+                    un área de una determinada forma geométrica:
+
+                      - Círculo
+                      - Cápsula
+                      - Rectangle
+                      - RayShape
+                      - Otras ...
+
+                </section>
+
+                <section data-markdown>
+                    ### Los nodos CollisionPolygon2D
+
+                    Si la forma del área que necesitamos no se ajusta a
+                    una de las formas predeternimadas del CollisionShape2D,
+                    podemos utilizar este nodo para definir un polígono 
+                    de la forma que necesitemos
+
+                </section>
+
+
+                <section>
+                    <img src="img/godot/polygon-nodes.png"> 
+                    <ul>
+                        <li>Verde: Añadir nodos</li>
+                        <li>Azul: Modificar nodos</li>
+                        <li>Rojo: Borrar nodos</li>
+                    </ul>
+                </section>
+        
+
+                <section>
+                    <h3>Debería quedar algo así</h3>
+                    <img width="480" height="480" src="img/godot/CollisionPolygon2D.png"> 
+                </section>
+        
+                <section>
+                    <h3>Añadamos algunas caráterísticas propias</h3>
+                    <ul>
+                        <li>La <b class="fragment highlight-green">dirección</b>
+                            en la que apunta la nave</li>
+                        <li>Velocidad a la que se 
+                            <b class="fragment highlight-green">desplaza</b>
+                            la nave</li>
+                        <li>Velocidad a la que puede 
+                            <b class="fragment highlight-green">rotar</b> la nave</li>
+                    </ul>
+                </section>
+
+                <section data-markdown>
+                    ### Añadir script al nodo raiz
+    
+                    Definimos nuestras propiedades:
+
+                    ```
+                    ...
+                    var direction = Vector2(1, 0)
+                    var speed = 10
+                    var rot_speed = 0.1
+                    ...
+                    ```
+
+                </section>
+
+                <section data-markdown>
+                    ### Añadir comportamiento (_process) 
+                    ```
+                    ...
+                    func _process(delta):
+                        position += direction * speed * delta
+                    ...
+                    ```
+                </section>
+
+                <section data-markdown>
+                    ### Añadir control (_input) 
+                    ```
+                    ...
+                    func _input(event):
+                        if event.is_action('ui_left'):
+                            direction = direction.rotated(-rot_speed)
+                            $Sprite.rotation = direction.angle()
+                        if event.is_action('ui_right'):
+                            direction = direction.rotated(rot_speed)
+                            $Sprite.rotation = direction.angle()
+                    ...
+                    ```
+                </section>
+
+                
+                <section>
+                    <h3> La escena debería funcionar por si sola</h3>
+
+                    <p>Pulsemos el botón de ejecutar la escena actual</p>
+
+                    <img src="img/godot/play-scene.png">
+                </section>
+
+                <section data-markdown>
+                    ### Observaciones
+
+                    - La nave se desplazarse a 10 pixels por segundo
+                    - Empieza en 0, 0
+                    - Puede rotar con los botones flecha derecha/izquierda
+
+                    Cambia las propiedades <code>speed</code> y <code>rot_speed</code>
+                    y ver lo que pasa
+
+                </section>
+
+                
+                <section data-markdown>
+                    ###  Propiedades editables
+
+                    Editar en el script de la nave, y cambiar:
+                    ```
+                    var speed = 10
+                    ```
+                    Por:
+                    ```
+                    export (int) var speed
+                    ```
+                </section>
+
+                <section data-markdown>
+                    ### Salvar y seleccionar el nodo raíz, Ship
+
+                    ![Propiedades editables](img/godot/script-variables.png)
+
+                </section>
+
+                <section data-markdown>
+                    ### Propiedades editables
+
+                    - La velocidad ahora se puede modificar como una propiedad
+                    - Prueba a cambiar la velocidad y ejecutar la escena
+
+                </section>
+                
+
+                <section data-markdown>
+                    ### El movimiento de la nave
+
+                    - La velocidad de la nave debería ser independiente
+                    de su orientación
+                    - Necesitamos un vector para indicar el impulso o 
+                      <b class="fragment highlight-green">inercia</b>
+                    - Al acelerar, añadiremos una fuerza (en forma de 
+                    vector) a la inercia
+                </section>
+
+                <section data-markdown>
+                    ### Posicion / Orientacion / Inercia
+
+                    ![Inercia](img/godot/inertia.png)
+
+                </section>
+
+                <section>
                     <h3>Inkscape</h3>
                 </section>
 
@@ -149,11 +408,6 @@ func _process(delta):
                     <img src="img/godot/opengameart.jpg">
                 </section>
 
-                <section>
-                    <h3>Nuestra nave para asteroids</h3>
-
-                    <img src="img/godot/nave.png">
-                </section>
 
 			</div>
 		</div>
