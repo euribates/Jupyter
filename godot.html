@@ -384,10 +384,117 @@ func _process(delta):
                 </section>
 
                 <section data-markdown>
-                    ### Posicion / Orientacion / Inercia
+                    ### Posición / Orientación / Inercia
 
                     ![Inercia](img/godot/inertia.png)
 
+                </section>
+
+                
+                <section data-markdown>
+                    ### Cambios en el código
+                    
+                    Añadir una nueva variable, `inertia`, en 
+                    principio apuntando en la misma dirección que la
+                    nave:
+                    ```
+                    var direction = Vector2(1, 0)
+                    var inertia = Vector2(1, 0)
+                    export (int) var speed
+                    var rot_speed = 0.1
+                    ```
+                </section>
+
+
+                <section data-markdown>
+                    ### Modificamos el método _process
+
+                    La nave se mueve ahora en el sentido que marca la inercia, no la
+                    dirección:
+
+                    ```
+                    ...
+                    func _process(delta):
+                        position += inertia * speed * delta
+                    ...
+                    ```
+                </section>
+
+                
+                <section data-markdown>
+                    ### Ejecutamos la escena de nuevo
+
+                    Comprobar que la nave sigue pudiendo girar, pero 
+                    eso no cambia su trayectoria.
+
+                </section>
+
+                
+                <section data-markdown>
+                    ### Añadamos el código de control que falta
+
+                    Nos falta ahora acelerar y frenar.
+                    
+                </section>
+
+
+                <section data-markdown>
+                    ### Acelerar
+
+                     - Una nueva propiedad de aceleracion (`acc`)
+                     - Aumentar `acc` mientras esté pulsada la tecla
+                     - Sumar a la inercia un vector producto
+                       de la orientacion de la nave por la aceleración
+                     - cambiar el sprite
+
+                </section>
+
+                
+                <section data-markdown>
+                    ### Nueva propiedad acc (aceleración)
+
+                    Por defeecto a 0
+                    ```
+                    ...
+                    var direction = Vector2(1, 0)
+                    var inertia = Vector2(1, 0)
+                    export (int) var speed
+                    var rot_speed = 0.1
+                    var acc = 0
+                    ...
+                    ```
+                </section>
+
+                <section data-markdown>
+                    ###  método engines_on
+
+                    Este método simula encender los motores de la nave
+                    ```
+                    ...
+                    func engines_on():
+                        acc = acc + 1
+                        inertia = inertia + (direction * acc)
+                        $Sprite.frame = 1
+                    ...
+                    ```
+                </section>
+
+                
+                <section data-markdown>
+                    ### Control de velocidad
+                    ```
+                    ...
+                    func _input(event):
+                        if event.is_action('ui_left'):
+                            direction = direction.rotated(-rot_speed)
+                            $Sprite.rotation = direction.angle()
+                        if event.is_action('ui_right'):
+                            direction = direction.rotated(rot_speed)
+                            $Sprite.rotation = direction.angle()
+                        if event.is_action_pressed('ui_up'):
+                            engines_on()
+                    ...
+                    ```
                 </section>
 
                 <section>
